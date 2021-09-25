@@ -24,9 +24,21 @@ const userSchema = new Schema({
     required: [true, "Password is required"],
     minlength: [6, "Password is too short"]
   },
+  fullName: {
+    type: String,
+    required: false
+  },
+  DNI: {
+    type: String,
+    required: false
+  },
+  phone: {
+    type: String,
+    required: false
+  },
   role: {
     type: String,
-    enum: ["USER, ADMIN"],
+    enum: ["USER", "ADMIN"],
     default: "USER"
   }
 },
