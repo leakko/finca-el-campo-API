@@ -3,17 +3,18 @@ const authMiddleware = require("../middlewares/auth.middleware");
 const authController = require("../controllers/auth.controller")
 const usersController = require("../controllers/users.controller")
 
-/* GET home page */
-router.get("/", (req, res, next) => {
-  res.render("index");
-});
-
 /* AUTH */
 
 //login
 router.post("/login", authMiddleware.isNotAuthenticated, authController.login)
 
-//register
+//users
+router.get(
+  "/users/me",
+  authMiddleware.isAuthenticated,
+  usersController.getCurrentUser
+);
+
 router.post(
   "/users",
   authMiddleware.isNotAuthenticated,

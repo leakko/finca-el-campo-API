@@ -17,8 +17,10 @@ module.exports.isAuthenticated = (req, res, next) => {
             throw createError(401);
           }
           if (decodedJwt) {
-            // store user id in request
-            req.currentUser = decodedJwt.id;
+            req.currentUser = {
+              id: decodedJwt.id,
+              role: decodedJwt.role
+            }
             next();
 						return;
           }

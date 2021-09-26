@@ -17,6 +17,14 @@ const favicon = require("serve-favicon");
 // https://www.npmjs.com/package/path
 const path = require("path");
 
+//cors
+const cors = require("cors");
+
+const corsMiddleware = cors({
+	origin: process.env.CORS_ORIGIN || "http://localhost:3000",
+	allowedHeaders: ["Content-Type", "Authorization"]
+});
+
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
@@ -24,6 +32,7 @@ module.exports = (app) => {
 
   // To have access to `body` property in the request
   app.use(express.json());
+  app.use(corsMiddleware)
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
 
