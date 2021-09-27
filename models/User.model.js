@@ -15,14 +15,14 @@ const userSchema = new Schema({
     trim: true,
     lowercase: true,
     unique: true,
-    required: [true, 'Email address is required'],
-    validate: [validateEmail, 'Please fill a valid email address'],
-    match: [EMAIL_PATTERN, 'Please fill a valid email address']
+    required: [true, 'Debes poner una dirección de email'],
+    validate: [validateEmail, 'Debes usar una dirección de email válida'],
+    match: [EMAIL_PATTERN, 'Debes usar una dirección de email válida']
   },
   password: {
     type: String,
-    required: [true, "Password is required"],
-    minlength: [6, "Password is too short"]
+    required: [true, "Debes poner una contraseña"],
+    minlength: [6, "Contraseña demasiado corta"]
   },
   fullName: {
     type: String,

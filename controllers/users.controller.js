@@ -9,5 +9,5 @@ module.exports.getCurrentUser = (req, res, next) => {
 module.exports.createUser = (req, res, next) => {
   User.create(req.body)
     .then((user) => res.json(user))
-    .catch(next);
+    .catch((error) => res.json({"errorMessage": error.errors.password ? error.errors.password.properties.message : error.errors.email.properties.message}));
 };
