@@ -2,6 +2,7 @@ const router = require("express").Router();
 const authMiddleware = require("../middlewares/auth.middleware");
 const authController = require("../controllers/auth.controller")
 const usersController = require("../controllers/users.controller")
+const celebrationsController = require("../controllers/celebrations.controller")
 
 /* AUTH */
 
@@ -20,5 +21,17 @@ router.post(
   authMiddleware.isNotAuthenticated,
   usersController.createUser
 );
+
+/* CELEBRATIONS */
+
+router.get(
+  "/celebrations",
+  celebrationsController.getCelebrations
+)
+
+router.post(
+  "/celebrations",
+  celebrationsController.createCelebration
+)
 
 module.exports = router;

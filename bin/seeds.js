@@ -38,7 +38,7 @@ mongoose.connection.once("open", () => {
       const celebrations = [];
       for (let i = 0; i < 10; i++) {
         celebrations.push({
-          date: faker.date.recent(),
+          date: faker.date.between('2021-09-31', '2021-12-5'),
           client: randomArrayElement(users)._id,
         });
       }
