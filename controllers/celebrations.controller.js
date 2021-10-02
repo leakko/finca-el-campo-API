@@ -17,3 +17,10 @@ module.exports.createCelebration = (req, res, next) => {
         }
     });
 };
+
+module.exports.getUserCelebrations = (req, res, next) => {
+    const { userId } = req.params
+    Celebration.find({ client: userId })
+    .then((userCelebrations) => res.json(userCelebrations))
+    .catch(next);
+};

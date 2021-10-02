@@ -34,4 +34,9 @@ router.post(
   celebrationsController.createCelebration
 )
 
+router.get(
+  "/celebrations/:userId",
+  celebrationsController.getUserCelebrations
+)
+
 module.exports = router;
