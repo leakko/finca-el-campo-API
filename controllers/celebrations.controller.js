@@ -16,4 +16,4 @@ module.exports.createCelebration = (req, res, next) => {
             res.json({"errorMessage": error.errors.client.properties.message})
         }
     });
-};
+}; 

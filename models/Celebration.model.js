@@ -6,7 +6,8 @@ const celebrationSchema = new Schema({
   },
   client: {
     type: Schema.Types.ObjectId,
-    ref: "User"
+    ref: "User",
+    required: [true, "Inicia sesión para poder reservar tu fecha"]
   }
 },
 {
