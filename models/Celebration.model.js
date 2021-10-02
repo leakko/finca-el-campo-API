@@ -2,12 +2,13 @@ const { Schema, model, Mongoose } = require("mongoose");
 
 const celebrationSchema = new Schema({
   date: {
-    type: Date
+    type: Date,
+    required: [true, "Selecciona una fecha"]
   },
   client: {
     type: Schema.Types.ObjectId,
     ref: "User",
-    required: [true, "Inicia sesión para poder reservar tu fecha"]
+    required: [true, "Inicia sesión para poder reservar una fecha"]
   }
 },
 {
