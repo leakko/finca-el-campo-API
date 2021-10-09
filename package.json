@@ -21,7 +21,8 @@
     "luxon": "^2.0.2",
     "mongoose": "^6.0.7",
     "morgan": "^1.10.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "stripe": "^8.179.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"

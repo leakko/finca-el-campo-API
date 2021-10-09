@@ -7,6 +7,7 @@ module.exports.getCelebrations = (req, res, next) => {
 };
 
 module.exports.createCelebration = (req, res, next) => {
+    console.log(req.body)
     Celebration.create(req.body)
     .then((createdCelebration) => res.json(createdCelebration))
     .catch((error) => {

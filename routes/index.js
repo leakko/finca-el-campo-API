@@ -2,7 +2,8 @@ const router = require("express").Router();
 const authMiddleware = require("../middlewares/auth.middleware");
 const authController = require("../controllers/auth.controller")
 const usersController = require("../controllers/users.controller")
-const celebrationsController = require("../controllers/celebrations.controller")
+const celebrationsController = require("../controllers/celebrations.controller");
+const paymentsController = require("../controllers/payment.controller")
 
 /* AUTH */
 
@@ -37,6 +38,11 @@ router.post(
 router.get(
   "/celebrations/:userId",
   celebrationsController.getUserCelebrations
+)
+
+router.post(
+  "/pay",
+  paymentsController.pay
 )
 
 module.exports = router;
