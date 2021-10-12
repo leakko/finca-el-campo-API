@@ -1,3 +1,4 @@
+require("dotenv/config");
 require('../db/index');
 
 const mongoose = require("mongoose");

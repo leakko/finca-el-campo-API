@@ -18,6 +18,8 @@ const favicon = require("serve-favicon");
 const path = require("path");
 
 //cors
+require("dotenv/config");
+
 const cors = require("cors");
 
 const corsMiddleware = cors({
